@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>St.Valentine's Treasure Hunt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>St.Valentine's Treasure Hunt</h1>
+    </header>
+    <main>
+        <section id="start-screen" data-number="0" hidden>
+            <p>Welcome to the St.Valentine's Treasure Hunt. You will encounter several questions and clues with
+                prizes along the way. Let's jump in the adventure!</p>
+            <button class="btn-red" type="button">Next</button>
+        </section>
+
+        <section class="question" data-number="1">
+            <p>Cupid has what name in Greek mythology?</p>
+            <section class="input-section">
+                <input name="answer" type="text" placeholder="Answer">
+                <button class="btn-red" type="button">Submit</button>
+            </section>
+        </section>
+
+        <section class="clue" data-number="2" hidden>
+            <section class="img-section">
+                <img class="img-200" src="assets/img/1.jpg" alt="location">
+                <img class="img-200" src="assets/img/plus-64.png" alt="plus">
+                <img class="img-200" src="assets/img/symbol1.png" alt="symbol">
+            </section>
+            <section class="input-section">
+                <input name="answer" type="text" placeholder="Answer">
+                <button class="btn-red" type="button">Submit</button>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
