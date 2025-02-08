@@ -11,7 +11,7 @@
         <h1>St.Valentine's Treasure Hunt</h1>
     </header>
     <main>
-        <section id="start-screen" hidden>
+        <section id="start-screen" data-number="0">
             <p>Welcome to the St.Valentine's Treasure Hunt. You will encounter several questions and clues with
                 prizes along the way. Let's jump in the adventure!</p>
             <button class="btn-red">Next</button>
@@ -19,7 +19,7 @@
 
         <br/>
 
-        <section class="question" hidden data-number="1">
+        <section class="question" data-number="1" hidden>
             <p>Cupid has what name in Greek mythology?</p>
             <section class="input-section">
                 <input name="answer" type="text" placeholder="Answer">
@@ -27,7 +27,7 @@
             </section>
         </section>
 
-        <section class="clue" data-number="2">
+        <section class="clue" data-number="2" hidden>
             <section class="img-section">
                 <img class="img-200" src="assets/img/1.jpg" alt="location">
                 <img class="img-200" src="assets/img/plus-64.png" alt="plus">

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=MonteCarlo&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -10,12 +12,16 @@ body {
     padding: 50px;
     margin: 0 auto;
     max-width: 90vw;
+    font-family: "Merriweather", serif;
 }
 
 header {
     flex: 1 1 100%;
     text-align: center;
     padding-bottom: 2rem;
+    font-family: "MonteCarlo", sans-serif;
+    font-size: 2em;
+    color: red;
 }
 
 #start-screen,
@@ -35,6 +41,9 @@ header {
 button,
 input {
     padding: 5px 10px;
+    font-family: "Merriweather", serif;
+    border-radius: 5px;
+    border: solid 1px red;
 }
 
 .btn-red {
