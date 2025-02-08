@@ -51,7 +51,7 @@ input {
     font-size: 1rem;
     border-radius: 5px;
     border: solid 2px red;
-    margin: 10px 0 10px 0;
+    margin: 10px;
 }
 
 .btn-red {
@@ -63,6 +63,25 @@ input {
     background-color: white;
     color: red;
     cursor: pointer;
+}
+
+.error {
+    border: 2px solid darkred;
+    background-color: #ffe6e6;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.error-message {
+    color: darkred;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
 .img-section {
