@@ -9,19 +9,21 @@
 body {
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     margin: 0 auto;
     max-width: 90vw;
+    min-height: 100vh;
     font-family: "Merriweather", serif;
 }
 
 header {
-    flex: 1 1 100%;
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     font-family: "MonteCarlo", sans-serif;
     font-size: 2em;
     color: red;
+    line-height: 1;
 }
 
 #start-screen,
@@ -38,17 +40,29 @@ header {
     margin-bottom: 1rem;
 }
 
+p {
+    line-height: 1.5;
+}
+
 button,
 input {
     padding: 5px 10px;
     font-family: "Merriweather", serif;
+    font-size: 1rem;
     border-radius: 5px;
-    border: solid 1px red;
+    border: solid 2px red;
+    margin: 10px 0 10px 0;
 }
 
 .btn-red {
     background-color: red;
     color: white;
+}
+
+.btn-red:hover {
+    background-color: white;
+    color: red;
+    cursor: pointer;
 }
 
 .img-section {
@@ -57,8 +71,25 @@ input {
     justify-content: space-between;
 }
 
-
 .img-200 {
     max-width: 200px;
     max-height: 200px;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    button,
+    input {
+        font-size: 1.5rem;
+    }
+
+    #start-screen,
+    .question,
+    .clue {
+        max-width: 100%;
+        font-size: 1.5rem;
+    }
 }
