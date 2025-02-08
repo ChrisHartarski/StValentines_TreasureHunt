@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 90vw;
+}
+
+header {
+    flex: 1 1 100%;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+#start-screen,
+.question,
+.clue {
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#start-screen p,
+.question p,
+.clue .img-section {
+    margin-bottom: 1rem;
+}
+
+button,
+input {
+    padding: 5px 10px;
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+}
+
+.img-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.img-200 {
+    max-width: 200px;
+    max-height: 200px;
+}
