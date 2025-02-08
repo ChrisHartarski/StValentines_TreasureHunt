@@ -6,45 +6,45 @@ const mainEl = document.querySelector('main');
 
 function start() {
     console.log("DOMContentLoaded");
-    startBtn.addEventListener('click', startHunt);
+    startBtn.addEventListener('click', nextStep);
 }
 
-function startHunt() {
-    mainEl.removeChild(document.querySelector('main section'));
+function nextStep() {
+    mainEl.innerHTML="";
     let newSectionEl;
     currentSectionNum++;
     if (currentSectionNum % 2 === 0) {
-        newSectionEl = createClueElement(currentSectionNum, "Question " + currentSectionEl, "answer");
+        newSectionEl = createSectionElement("clue", currentSectionNum);
     } else {
-        newSectionEl = createQuestionElement(currentSectionNum, "Question " + currentSectionEl, "answer");
+        newSectionEl = createSectionElement("question", currentSectionNum);
     }
     mainEl.appendChild(newSectionEl);
 }
 
-function createQuestionElement(number, question, answer) {
-    const questionSectionEl = document.createElement("section");
-    questionSectionEl.classList.add("question");
-    questionSectionEl.dataset.number = number;
+function createSectionElement(type, number) {
+    const sectionEl = document.createElement("section");
 
-    const pEl = document.createElement("p");
-    pEl.textContent = question;
+    sectionEl.dataset.number = number;
+
+    if (type === "question") {
+        sectionEl.classList.add("question");
+
+        const pEl = document.createElement("p");
+        pEl.textContent = questions[number];
+
+        sectionEl.appendChild(pEl);
+    } else if (type === "clue") {
+        sectionEl.classList.add("clue");
+
+        const imgSectionEl = createImgSection(number);
+
+        sectionEl.appendChild(imgSectionEl);
+    }
 
     const newInputSectionEl = createInputSection();
+    sectionEl.appendChild(newInputSectionEl);
 
-    questionSectionEl.append(pEl, newInputSectionEl);
-    return questionSectionEl;
-}
-
-function createClueElement(number, answer) {
-    const clueSectionElement = document.createElement('section');
-    clueSectionElement.classList.add("clue");
-    clueSectionElement.dataset.number = number;
-
-    const imgSectionEl = createImgSection(number);
-
-    const newInputSectionEl = createInputSection();
-
-    clueSectionElement.append(imgSectionEl, newInputSectionEl)
+    return sectionEl;
 }
 
 function createInputSection() {
@@ -60,6 +60,7 @@ function createInputSection() {
     btnEl.classList.add("btn-red");
     btnEl.type = "button";
     btnEl.textContent = "Submit";
+    btnEl.addEventListener('click', checkAnswer);
 
     inputSectionEl.append(inputEl, btnEl);
     return inputSectionEl;
@@ -91,4 +92,32 @@ function createImg(number, imageNum) {
     }
 
     return imgEl;
+}
+
+function checkAnswer(e) {
+    const questNum = e.target.parentElement.parentElement.dataset.number;
+    const inputEl = document.querySelector('.input-section input');
+
+    if (inputEl.value === answers[questNum]) {
+        nextStep();
+    } else {
+        inputEl.classList.add('error');
+
+        const errorMsg = document.createElement("p");
+        errorMsg.classList.add('error-message');
+        errorMsg.textContent = "Wrong answer! Try again."
+
+        inputEl.parentElement.appendChild(errorMsg);
+    }
+}
+
+const questions = {
+    1: "Cupid has what name in Greek mythology?",
+    3: "Saint Valentine was said to be martyred in what year?"
+}
+
+const answers = {
+    1: "Eros",
+    2: "lOvE",
+    3: "269",
 }
