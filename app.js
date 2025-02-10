@@ -132,11 +132,18 @@ function checkAnswer(e) {
 
 const questions = {
     1: "Cupid has what name in Greek mythology?",
-    3: "Saint Valentine was said to be martyred in what year?"
+    3: "When was February 14 first declared to be Valentine's Day?",
+    5: "What was Valentine’s profession?",
+    7: "In which country did giving chocolate keys become a Valentine’s Day tradition to symbolize unlocking the giver’s heart?",
 }
 
 const answers = {
     1: "Eros",
     2: "lOvE",
-    3: "269",
+    3: "1537",
+    4: "holIDAy",
+    5: "priest",
+    6: "CupID",
+    7: "Italy",
+    8: "HEaRt"
 }
