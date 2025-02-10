@@ -13,11 +13,17 @@ function nextStep() {
     mainEl.innerHTML="";
     let newSectionEl;
     currentSectionNum++;
-    if (currentSectionNum % 2 === 0) {
-        newSectionEl = createSectionElement("clue", currentSectionNum);
+
+    if (currentSectionNum <= Object.keys(answers).length ) {
+        if (currentSectionNum % 2 === 0) {
+            newSectionEl = createSectionElement("clue", currentSectionNum);
+        } else {
+            newSectionEl = createSectionElement("question", currentSectionNum);
+        }
     } else {
-        newSectionEl = createSectionElement("question", currentSectionNum);
+        newSectionEl = createLastSection();
     }
+
     mainEl.appendChild(newSectionEl);
 }
 
@@ -44,6 +50,17 @@ function createSectionElement(type, number) {
     const newInputSectionEl = createInputSection();
     sectionEl.appendChild(newInputSectionEl);
 
+    return sectionEl;
+}
+
+function createLastSection() {
+    const sectionEl = document.createElement("section");
+    sectionEl.id = "last-screen";
+
+    const pEl = document.createElement("p");
+    pEl.textContent = "Congratulations! You solved the treasure hunt, you are a true heart hunter! Enjoy the rest of this magical day!";
+
+    sectionEl.appendChild(pEl);
     return sectionEl;
 }
 
