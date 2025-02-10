@@ -96,16 +96,18 @@ function createImgSection(number) {
 
 function createImg(number, imageNum) {
     const imgEl = document.createElement('img');
-    imgEl.classList.add('img-200');
     if (imageNum == 1) {
         imgEl.setAttribute("src", "assets/img/clues/" + number + "/1.jpg");
         imgEl.setAttribute("alt", "location");
+        imgEl.classList.add("picture");
     } else if (imageNum == 2) {
         imgEl.setAttribute("src", "assets/img/clues/" + number + "/2.png");
         imgEl.setAttribute("alt", "symbol");
+        imgEl.classList.add("picture");
     } else if (imageNum === "+") {
         imgEl.setAttribute("src", "assets/img/clues/plus-64.png");
         imgEl.setAttribute("alt", "plus");
+        imgEl.classList.add("plus");
     }
 
     return imgEl;

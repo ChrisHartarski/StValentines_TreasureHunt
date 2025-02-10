@@ -89,16 +89,21 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
 }
 
-.img-200 {
-    max-width: 200px;
-    max-height: 200px;
+.picture {
+    width: 40%;
+}
+
+.plus {
+    width: calc(15% - 20px);
 }
 
 @media (max-width: 600px) {
     body {
         font-size: 1.2rem;
+        margin: 0 auto;
     }
 
     button,
@@ -112,5 +117,17 @@ input {
     #last-screen {
         max-width: 100%;
         font-size: 1.5rem;
+    }
+
+    .img-section {
+        gap: 10px;
+    }
+
+    .picture {
+        width: 40%;
+    }
+
+    .plus {
+        width: calc(20% - 20px);
     }
 }
