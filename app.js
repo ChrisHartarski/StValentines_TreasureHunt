@@ -29,7 +29,7 @@ function nextStep() {
 
 function createSectionElement(type, number) {
     const sectionEl = document.createElement("section");
-
+    sectionEl.classList.add("card");
     sectionEl.dataset.number = number;
 
     if (type === "question") {
@@ -56,6 +56,7 @@ function createSectionElement(type, number) {
 function createLastSection() {
     const sectionEl = document.createElement("section");
     sectionEl.id = "last-screen";
+    sectionEl.classList.add("card");
 
     const pEl = document.createElement("p");
     pEl.textContent = "Congratulations! You solved the treasure hunt, you are a true heart hunter! Enjoy the rest of this magical day!";

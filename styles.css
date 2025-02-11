@@ -15,6 +15,11 @@ body {
     max-width: 90vw;
     min-height: 100vh;
     font-family: "Merriweather", serif;
+    background-image: url("/assets/img/background.jpg");
+    background-repeat: repeat;
+    background-size: auto 100vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-blend-mode: overlay;
 }
 
 header {
@@ -24,6 +29,11 @@ header {
     font-size: 2em;
     color: red;
     line-height: 1;
+    text-shadow:
+            white 0 0 20px,
+            white 0 0 20px,
+            white 0 0 20px,
+            white 0 0 20px;
 }
 
 #start-screen,
@@ -43,6 +53,15 @@ header {
 
 p {
     line-height: 1.5;
+}
+
+.card {
+    width: fit-content;
+    max-width: 90vw;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    border-radius: 5px;
+    padding: 20px;
 }
 
 button,
