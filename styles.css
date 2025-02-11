@@ -64,6 +64,15 @@ p {
     padding: 20px;
 }
 
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    flex-wrap: nowrap;
+}
+
 button,
 input {
     padding: 5px 10px;
