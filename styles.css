@@ -137,6 +137,7 @@ input {
     button,
     input {
         font-size: 1.3rem;
+        max-width: 90%;
     }
 
     #start-screen,
