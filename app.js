@@ -121,13 +121,15 @@ function checkAnswer(e) {
     if (inputEl.value === answers[questNum]) {
         nextStep();
     } else {
-        inputEl.classList.add('error');
+        if (!inputEl.classList.contains('error')) {
+            inputEl.classList.add('error');
 
-        const errorMsg = document.createElement("p");
-        errorMsg.classList.add('error-message');
-        errorMsg.textContent = "Wrong answer! Try again."
+            const errorMsg = document.createElement("p");
+            errorMsg.classList.add('error-message');
+            errorMsg.textContent = "Wrong answer! Try again."
 
-        inputEl.parentElement.appendChild(errorMsg);
+            inputEl.parentElement.appendChild(errorMsg);
+        }
     }
 }
 
